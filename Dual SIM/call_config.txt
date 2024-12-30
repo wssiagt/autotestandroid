@@ -1,0 +1,5 @@
+# 通话测试配置
+dial_number=+351933113188
+dial_times=1
+dial_duration=6
+wait_time=5

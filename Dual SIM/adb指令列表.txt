@@ -1,0 +1,45 @@
+appium --relaxed-security
+
+
+拨打电话： adb shell am start -a android.intent.action.CALL tel:10086
+挂电话：adb shell input keyevent 6
+接电话：adb shell input keyevent 5
+唤醒屏幕：adb shell input keyevent 3
+
+adb shell settings put global preferred_network_mode0 1  切换SIM1
+
+adb shell am start -a android.intent.action.DIAL
+adb shell input text '*#*#284#*#*'
+adb shell am broadcast -a android.provider.Telephony.SECRET_CODE -d android_secret_code://284
+
+
+adb shell svc data enable/disable 开关数据
+
+adb shell netstat 查看网络状态
+
+adb shell getprop gsm.network.type  查看当前注册网络，返回（LTE/LTE)
+adb shell getprop | findstr /i "gsm"
+
+adb shell dumpsys telephony.registry  查看网络信息
+
+小米：
+adb shell am start -a android.settings.DATA_ROAMING_SETTINGS  进入移动网络设置
+
+adb shell am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true
+模拟飞行模式
+adb shell am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false
+退出模拟飞行模式
+
+adb shell am start -a android.settings.DATA_ROAMING_SETTINGS
+进入数据网络管理
+
+adb shell cmd media_session volume --set 0
+将音量调节为0
+
+adb reboot
+adb wait-for-device
+
+adb shell svc wifi disable
+关闭wifi
+adb shell svc bluetooth disable
+关闭蓝牙
