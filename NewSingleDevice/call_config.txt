@@ -1,0 +1,10 @@
+dial_number1=+351933113208
+dial_number2=+351933113208
+dial_times=1
+dial_duration=6
+wait_time=5
+network_types=5Gvolte,4Gvolte,5G,4G,2G
+SIM_1_OPERATOR=NOS
+SIM_1_NUMBER=+351933113188
+SIM_2_OPERATOR=vodafone P
+SIM_2_NUMBER=+351916679016
